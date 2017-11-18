@@ -1,0 +1,14 @@
+.main-display {
+    margin-top: 50px;
+    font-family: 'Lora', serif;
+}
+
+.main-display h1 {
+    margin-bottom: 30px;
+
+}
+
+p:nth-last-child(4n+1) {
+    margin-bottom: 40px;
+border-bottom: solid 1px rgba(0,0,0,0.2);
+}
