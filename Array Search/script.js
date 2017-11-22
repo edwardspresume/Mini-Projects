@@ -7,6 +7,13 @@ let print = msg => {
   output.innerHTML = `<h1> ${msg} </h1>`;
 };
 
+//
 while (true) {
-  let search = prompt("search up an item in our store. Type 'list' to show all our items ")
+  let search = prompt("search up an item in our store. Type 'list' to show all our items. When your done type 'quit' to exit ");
+  search.toLowerCase();
+  if (search === 'quit') {
+    break;
+  } else if (search === 'list') {
+    print(items.join(', '));
+  }
 }
