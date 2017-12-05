@@ -28,6 +28,7 @@ let questionResults = () => `<li> ${quizQA[i][0]} </li>`;
 for (var i = 0; i < quizQA.length; i++) {
   //Prompt questions
   let question = parseInt(prompt(quizQA[i][0]));
+
   if (question === quizQA[i][1]) {
     score++;
     correctQuestions += questionResults();
