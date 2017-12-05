@@ -18,11 +18,11 @@ let score = 0;
 let correctQuestions = `<h3> You got these questions correct: </h3> <ol>`;
 let incorrectQuestions = `<h3> You got these questions wrong: </h3> <ol>`;
 
-//Print the quiz result
-let print = msg => document.write(msg);
-
 //Sort the questions in list format
 let questionResults = () => `<li> ${quizQA[i][0]} </li>`;
+
+//Print the quiz result
+let print = msg => document.write(msg);
 
 //Loop through the quiz
 for (var i = 0; i < quizQA.length; i++) {
