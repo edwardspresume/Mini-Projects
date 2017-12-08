@@ -13,7 +13,7 @@ let quizQA = [
 
 //Print the quiz result
 let print = msg => document.write(msg);
-
+as
 let quizGenerator = () => {
   //Keep track of how many questions are answered correctly
   let score = 0;
