@@ -4,12 +4,12 @@ let message = '';
 
 //Function to print the results
 let print = (msg) => {
-  var output = document.querySelector("#output");
+  let output = document.querySelector("#output");
   output.innerHTML = msg;
 }
 
 //Format in which the data will be displayed
-var studentInfo = student => {
+let studentInfo = student => {
   var report = `<h2> Student: ${student.Name} </h2>`;
 
   report += `<p> Interest: ${student.Interest} </p>`;
