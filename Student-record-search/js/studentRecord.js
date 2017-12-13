@@ -10,7 +10,7 @@ let print = (msg) => {
 
 //Format in which the data will be displayed
 let studentInfo = student => {
-  var report = `<h2> Student: ${student.Name} </h2>`;
+  let report = `<h2> Student: ${student.Name} </h2>`;
 
   report += `<p> Interest: ${student.Interest} </p>`;
 
@@ -29,7 +29,7 @@ while (true) {
     break;
   }
 
-  for (var i = 0; i < students.length; i++) {
+  for (let i = 0; i < students.length; i++) {
     student = students[i];
 
     if (student.Name.toLowerCase() === search.toLowerCase()) {
