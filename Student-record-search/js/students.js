@@ -2,7 +2,7 @@ var students = [
   {
     Name: "Edwards",
     Interest: "Front End Dev",
-    Projects: 12,
+    projects: 12,
     'Years of experience': 1
   }, {
     Name: "Kev",
