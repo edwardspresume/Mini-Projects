@@ -6,26 +6,31 @@ let todoList = {
     'item1', 'item2', 'item3'
   ],
 
+  //Print out information
+  printInfo: msg => document.write(msg),
+
   //Displays the tasks in our list
-  displayTodos: function() {
-    console.log(this.todos.join(', '));
+  displayTasks: function() {
+    this.printInfo(this.todos.join(', '));
   },
 
   //Add a new task to the list
-  addTodo: function(task) {
+  addTask: function(task) {
     this.todos.push(task);
-    this.displayTodos();
+    this.displayTasks();
   },
 
   //Change an existing task in our list
-  changeTodo: function(index, newValue) {
+  changeTask: function(index, newValue) {
     this.todos[index] = newValue;
-    this.displayTodos();
+    this.displayTasks();
   },
 
   //Delete a task from our list
-  deleteTodo: function(index) {
+  deleteTask: function(index) {
     this.todos.splice(index, 1);
-    this.displayTodos();
+    this.displayTasks();
   }
 };
+
+todoList.displayTasks();
