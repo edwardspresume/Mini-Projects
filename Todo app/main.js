@@ -9,7 +9,8 @@ let todoList = {
 
   //Displays the tasks in our list
   displayTasks: function() {
-    this.printInfo(this.tasks.join(', '));
+    // this.printInfo(this.tasks.join(', '));
+    console.log(this.tasks);
   },
 
   //Add a new task to the list
@@ -19,14 +20,20 @@ let todoList = {
   },
 
   //Change an existing task in our list
-  changeTask: function(index, newValue) {
-    this.tasks[index] = newValue;
+  changeTask: function(index, task) {
+    this.tasks[index].task = task;
     this.displayTasks();
   },
 
   //Delete a task from our list
   deleteTask: function(index) {
     this.tasks.splice(index, 1);
+    this.displayTasks();
+  },
+
+  toggleCompleted: function(index) {
+    let task = this.tasks[index];
+    task.completed = !task.completed;
     this.displayTasks();
   }
 };
