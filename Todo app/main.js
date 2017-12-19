@@ -9,8 +9,14 @@ let todoList = {
 
   //Displays the tasks in our list
   displayTasks: function() {
-    // this.printInfo(this.tasks.join(', '));
-    console.log(this.tasks);
+    if (this.tasks.length === 0) {
+      console.log('Your to do list is empty!');
+    } else {
+      console.log('My tasks:');
+      for (let i = 0; i < this.tasks.length; i++) {
+        console.log(this.tasks[i].task);
+      }
+    }
   },
 
   //Add a new task to the list
