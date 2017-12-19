@@ -31,6 +31,7 @@ let todoList = {
     this.displayTasks();
   },
 
+  //Toggles between whether our not the task is completed
   toggleCompleted: function(index) {
     let task = this.tasks[index];
     task.completed = !task.completed;
