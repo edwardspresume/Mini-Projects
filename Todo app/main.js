@@ -4,9 +4,6 @@ let todoList = {
   //Our list of tasks
   tasks: [],
 
-  //Print out information
-  printInfo: msg => document.write(msg),
-
   //Displays the tasks in our list
   displayTasks: function() {
     if (this.tasks.length === 0) {
@@ -14,7 +11,11 @@ let todoList = {
     } else {
       console.log('My tasks:');
       for (let i = 0; i < this.tasks.length; i++) {
-        console.log(this.tasks[i].task);
+        if (this.tasks[i].completed) {
+          console.log(`(X) ${this.tasks[i].task}`);
+        } else {
+          console.log(`() ${this.tasks[i].task}`);
+        }
       }
     }
   },
