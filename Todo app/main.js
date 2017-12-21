@@ -7,7 +7,7 @@ let todoList = {
   //Displays the tasks in our list
   displayTasks: function() {
     if (this.tasks.length === 0) {
-      console.log('Your to do list is empty!');
+      console.log('Your todo list is empty!');
     } else {
       console.log('My tasks:');
       for (let i = 0; i < this.tasks.length; i++) {
