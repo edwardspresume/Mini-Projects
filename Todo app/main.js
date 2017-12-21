@@ -11,7 +11,7 @@ let todoList = {
     } else {
       console.log('My tasks:');
       for (let i = 0; i < this.tasks.length; i++) {
-        if (this.tasks[i].completed) {
+        if (this.tasks[i].completed = true) {
           console.log(`(X) ${this.tasks[i].task}`);
         } else {
           console.log(`() ${this.tasks[i].task}`);
