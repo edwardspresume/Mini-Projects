@@ -6,7 +6,6 @@ let todoList = {
 
   //Displays the tasks in our list
   displayTasks: function() {
-    debugger;
     if (this.tasks.length === 0) {
       console.log('Your todo list is empty!');
     } else {
@@ -73,13 +72,13 @@ let todoList = {
   }
 };
 
-let displayTasksButton = document.getElementById('displayTasksButton');
-let toggleAllButton = document.getElementById('toggleAllButton');
+//Object for our Event handlers
+let handler = {
+  displayTasks: function() {
+    todoList.displayTasks();
+  },
 
-displayTasksButton.addEventListener('click', function() {
-  todoList.displayTasks();
-});
-
-toggleAllButton.addEventListener('click', function() {
-  todoList.toggleAll();
-});
+  toggleAll: function() {
+    todoList.toggleAll();
+  }
+}
