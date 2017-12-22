@@ -6,12 +6,13 @@ let todoList = {
 
   //Displays the tasks in our list
   displayTasks: function() {
+    debugger;
     if (this.tasks.length === 0) {
       console.log('Your todo list is empty!');
     } else {
       console.log('My tasks:');
       for (let i = 0; i < this.tasks.length; i++) {
-        if (this.tasks[i].completed = true) {
+        if (this.tasks[i].completed === true) {
           console.log(`(X) ${this.tasks[i].task}`);
         } else {
           console.log(`() ${this.tasks[i].task}`);
@@ -71,3 +72,14 @@ let todoList = {
     this.displayTasks();
   }
 };
+
+let displayTasksButton = document.getElementById('displayTasksButton');
+let toggleAllButton = document.getElementById('toggleAllButton');
+
+displayTasksButton.addEventListener('click', function() {
+  todoList.displayTasks();
+});
+
+toggleAllButton.addEventListener('click', function() {
+  todoList.toggleAll();
+});
