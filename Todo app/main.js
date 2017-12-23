@@ -74,11 +74,6 @@ let todoList = {
 
 //Object for our Event handlers
 let handler = {
-  displayTasks: function() {
-    todoList.displayTasks();
-  },
-
-  toggleAll: function() {
-    todoList.toggleAll();
-  }
+  displayTasks: () => todoList.displayTasks(),
+  toggleAll: () => todoList.toggleAll();
 }
