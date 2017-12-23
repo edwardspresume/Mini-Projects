@@ -52,7 +52,7 @@ let todoList = {
 
     //Get number of completed tasks.
     for (let i = 0; i < totalTaks; i++) {
-      if (this.tasks[i].completed) {
+      if (this.tasks[i].completed === true) {
         completedTasks++;
       }
     }
