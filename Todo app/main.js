@@ -75,7 +75,7 @@ let todoList = {
 //Object for our Event handlers
 let handler = {
   displayTasks: () => todoList.displayTasks(),
-  toggleAll: () => todoList.toggleAll(),
+
   addTask: function() {
     let AddTaskInput = document.getElementById('AddTaskInput');
     todoList.addTask(AddTaskInput.value);
@@ -85,7 +85,6 @@ let handler = {
   changeTask: function() {
     let changeTaskIndexInput = document.getElementById('changeTaskIndexInput');
     let changeTaskInput = document.getElementById('changeTaskInput');
-
     todoList.changeTask(changeTaskIndexInput.valueAsNumber, changeTaskInput.value);
     changeTaskIndexInput.value = '';
     changeTaskInput.value = '';
@@ -95,5 +94,13 @@ let handler = {
     let deleteTaskIndexInput = document.getElementById('deleteTaskIndexInput');
     todoList.deleteTask(deleteTaskIndexInput.valueAsNumber);
     deleteTaskIndexInput.value = '';
-  }
+  },
+
+  toggleCompleted: function() {
+    let toggleCompletedIndexInput = document.getElementById('toggleCompletedIndexInput');
+    todoList.toggleCompleted(toggleCompletedIndexInput.valueAsNumber);
+    toggleCompletedIndexInput.value = '';
+  },
+
+  toggleAll: () => todoList.toggleAll()
 }
