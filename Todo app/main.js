@@ -1,4 +1,4 @@
-/* DRAFT V6 */
+/* DRAFT V8 */
 
 let todoList = {
   //Our list of tasks
@@ -75,5 +75,20 @@ let todoList = {
 //Object for our Event handlers
 let handler = {
   displayTasks: () => todoList.displayTasks(),
-  toggleAll: () => todoList.toggleAll();
+  toggleAll: () => todoList.toggleAll(),
+  addTask: function() {
+    let AddTaskInput = document.getElementById('AddTaskInput');
+    todoList.addTask(AddTaskInput.value);
+    AddTaskInput.value = '';
+  },
+
+  changeTask: function() {
+    let changeTaskIndexInput = document.getElementById('changeTaskIndexInput');
+    let changeTaskInput = document.getElementById('changeTaskInput');
+
+    todoList.changeTask(changeTaskIndexInput.valueAsNumber, changeTaskInput.value);
+    changeTaskIndexInput.value = '';
+    changeTaskInput.value = '';
+
+  }
 }
