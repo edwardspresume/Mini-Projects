@@ -89,6 +89,11 @@ let handler = {
     todoList.changeTask(changeTaskIndexInput.valueAsNumber, changeTaskInput.value);
     changeTaskIndexInput.value = '';
     changeTaskInput.value = '';
+  },
 
+  deleteTask: function() {
+    let deleteTaskIndexInput = document.getElementById('deleteTaskIndexInput');
+    todoList.deleteTask(deleteTaskIndexInput.valueAsNumber);
+    deleteTaskIndexInput.value = '';
   }
 }
