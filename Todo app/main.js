@@ -104,3 +104,11 @@ let handler = {
 
   toggleAll: () => todoList.toggleAll()
 }
+
+let view = {
+  displayTasks: function() {
+    let tasksUl = document.getElementById('tasksUl');
+    let taskLi = document.createElement('li');
+    tasksUl.appendChild(taskLi)
+  }
+}
