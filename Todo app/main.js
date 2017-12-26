@@ -1,5 +1,3 @@
-/* DRAFT V8 */
-
 let todoList = {
   //Our list of tasks
   tasks: [],
@@ -31,23 +29,22 @@ let todoList = {
     let completedTasks = 0;
 
     //Get number of completed tasks.
-    for (let i = 0; i < totalTaks; i++) {
-      if (this.tasks[i].completed === true) {
+    this.tasks.forEach(task => {
+      if (task.completed === true) {
         completedTasks++;
       }
-    }
+    });
 
-    //If everything's true, making everything false.
-    if (completedTasks === totalTaks) {
-      for (let i = 0; i < totalTaks; i++) {
-        this.tasks[i].completed = false;
+    this.tasks.forEach(task => {
+      //If everything's true, making everything false.
+      if (completedTasks === totalTaks) {
+        task.completed = false;
+
+        //Otherwise, make everything true.
+      } else {
+        task.completed = true;
       }
-      //Otherwise, make everything true.
-    } else {
-      for (let i = 0; i < totalTaks; i++) {
-        this.tasks[i].completed = true;
-      }
-    }
+    });
   }
 };
 
@@ -74,10 +71,8 @@ let handler = {
     view.displayTasks();
   },
 
-  deleteTask: function() {
-    let deleteTaskIndexInput = document.getElementById('deleteTaskIndexInput');
-    todoList.deleteTask(deleteTaskIndexInput.valueAsNumber);
-    deleteTaskIndexInput.value = '';
+  deleteTask: function(index) {
+    todoList.deleteTask(index);
     view.displayTasks();
   },
 
@@ -85,7 +80,6 @@ let handler = {
     let toggleCompletedIndexInput = document.getElementById('toggleCompletedIndexInput');
     todoList.toggleCompleted(toggleCompletedIndexInput.valueAsNumber);
     toggleCompletedIndexInput.value = '';
-
     view.displayTasks();
   },
 
@@ -95,24 +89,47 @@ let handler = {
   }
 };
 
+//Displays the tasks in our list
 let view = {
-  //Displays the tasks in our list
   displayTasks: function() {
     let tasksUl = document.getElementById('tasksUl');
     tasksUl.innerHTML = '';
-    for (let i = 0; i < todoList.tasks.length; i++) {
+
+    todoList.tasks.forEach(function(task, index) {
       let taskLi = document.createElement('li');
       let taskCompletion = '';
-      let task = todoList.tasks[i];
-
       if (task.completed === true) {
         taskCompletion = `(X) ${task.task}`;
       } else {
-        taskCompletion = `() ${task.task}`;
+        taskCompletion = `( ) ${task.task}`;
       }
 
+      taskLi.id = index;
       taskLi.textContent = taskCompletion;
+      taskLi.appendChild(this.createDeleteButton());
       tasksUl.appendChild(taskLi);
-    }
+    }, this);
+  },
+
+  createDeleteButton: function() {
+    let deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.className = 'deleteButton';
+    return deleteButton;
+  },
+
+  setUpEventListener: function() {
+    let tasksUl = document.getElementById('tasksUl');
+    tasksUl.addEventListener('click', function(event) {
+      //Targets the element that was clicked on.
+      let elementClicked = event.target;
+
+      //check if elementClicked is a delete deleteButton
+      if (elementClicked.className === 'deleteButton') {
+        handler.deleteTask(parseInt(elementClicked.parentNode.id));
+      }
+    });
   }
-}
+};
+
+view.setUpEventListener();
