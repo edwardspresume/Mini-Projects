@@ -78,8 +78,13 @@ let handler = {
 
   addTask: function() {
     let AddTaskInput = document.getElementById('AddTaskInput');
-    todoList.addTask(AddTaskInput.value);
-    AddTaskInput.value = '';
+    if (AddTaskInput.value === '') {
+      alert('Please enter a task to continue');
+    } else {
+      todoList.addTask(AddTaskInput.value);
+      AddTaskInput.value = '';
+    }
+
   },
 
   changeTask: function() {
@@ -103,12 +108,25 @@ let handler = {
   },
 
   toggleAll: () => todoList.toggleAll()
-}
+};
 
 let view = {
   displayTasks: function() {
     let tasksUl = document.getElementById('tasksUl');
-    let taskLi = document.createElement('li');
-    tasksUl.appendChild(taskLi)
+    tasksUl.innerHTML = '';
+    for (let i = 0; i < todoList.tasks.length; i++) {
+      let taskLi = document.createElement('li');
+      let taskCompletion = '';
+      let task = todoList.tasks[i];
+
+      if (task.completed === true) {
+        taskCompletion = `(X) ${task.task}`;
+      } else {
+        taskCompletion = `() ${task.task}`;
+      }
+
+      taskLi.textContent = taskCompletion;
+      tasksUl.appendChild(taskLi);
+    }
   }
 }
