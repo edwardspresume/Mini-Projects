@@ -1,3 +1,42 @@
+//Time
+let currentDate = {
+  todaysDate: new Date(),
+
+  daysPlaceholder: [
+    "SUN",
+    "MON",
+    "TUE",
+    "WED",
+    "THU",
+    "FRI",
+    "SAT"
+  ],
+
+  monthsPlaceholder: [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ],
+
+  displayDate: function() {
+    document.getElementById("date").innerHTML = this.todaysDate.getDate();
+    document.getElementById("day").innerHTML = this.daysPlaceholder[this.todaysDate.getDay()];
+    document.getElementById("month").innerHTML = this.monthsPlaceholder[this.todaysDate.getMonth()];
+    document.getElementById('addIcon').innerHTML = "&#xf055";
+  }
+};
+currentDate.displayDate();
+
+//Object of how todoList
 let todoList = {
   //Our list of tasks
   tasks: [],
