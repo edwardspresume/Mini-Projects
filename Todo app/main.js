@@ -27,13 +27,15 @@ let currentDate = {
     'December'
   ],
 
-  displayDate: function() {
+  displayDate: function () {
     document.getElementById("date").innerHTML = this.todaysDate.getDate();
     document.getElementById("day").innerHTML = this.daysPlaceholder[this.todaysDate.getDay()];
     document.getElementById("month").innerHTML = this.monthsPlaceholder[this.todaysDate.getMonth()];
     document.getElementById('addIcon').innerHTML = "&#xf055";
   }
 };
+
+
 currentDate.displayDate();
 
 //Object of how todoList
@@ -42,28 +44,31 @@ let todoList = {
   tasks: [],
 
   //Add a new task to the list
-  addTask: function(task) {
-    this.tasks.push({task: task, completed: false});
+  addTask: function (task) {
+    this.tasks.push({
+      task: task,
+      completed: false
+    });
   },
 
   //Change an existing task in our list
-  changeTask: function(index, task) {
+  changeTask: function (index, task) {
     this.tasks[index].task = task;
   },
 
   //Delete a task from our list
-  deleteTask: function(index) {
+  deleteTask: function (index) {
     this.tasks.splice(index, 1);
   },
 
   //Toggles between whether our not a task is completed
-  toggleCompleted: function(index) {
+  toggleCompleted: function (index) {
     let task = this.tasks[index];
     task.completed = !task.completed;
   },
 
   //Toggles all of our tasks
-  toggleAll: function() {
+  toggleAll: function () {
     let totalTaks = this.tasks.length;
     let completedTasks = 0;
 
@@ -89,7 +94,7 @@ let todoList = {
 
 //Object for our Event handlers
 let handler = {
-  addTask: function() {
+  addTask: function () {
     let AddTaskInput = document.getElementById('AddTaskInput');
     if (AddTaskInput.value === '') {
       alert('Please enter a task to continue');
@@ -101,7 +106,7 @@ let handler = {
     view.displayTasks();
   },
 
-  changeTask: function() {
+  changeTask: function () {
     let changeTaskIndexInput = document.getElementById('changeTaskIndexInput');
     let changeTaskInput = document.getElementById('changeTaskInput');
     todoList.changeTask(changeTaskIndexInput.valueAsNumber, changeTaskInput.value);
@@ -110,19 +115,19 @@ let handler = {
     view.displayTasks();
   },
 
-  deleteTask: function(index) {
+  deleteTask: function (index) {
     todoList.deleteTask(index);
     view.displayTasks();
   },
 
-  toggleCompleted: function() {
+  toggleCompleted: function () {
     let toggleCompletedIndexInput = document.getElementById('toggleCompletedIndexInput');
     todoList.toggleCompleted(toggleCompletedIndexInput.valueAsNumber);
     toggleCompletedIndexInput.value = '';
     view.displayTasks();
   },
 
-  toggleAll: function() {
+  toggleAll: function () {
     todoList.toggleAll();
     view.displayTasks();
   }
@@ -130,11 +135,11 @@ let handler = {
 
 //Displays the tasks in our list
 let view = {
-  displayTasks: function() {
+  displayTasks: function () {
     let tasksUl = document.getElementById('tasksUl');
     tasksUl.innerHTML = '';
 
-    todoList.tasks.forEach(function(task, index) {
+    todoList.tasks.forEach(function (task, index) {
       let taskLi = document.createElement('li');
       let taskCompletion = '';
       if (task.completed === true) {
@@ -150,16 +155,16 @@ let view = {
     }, this);
   },
 
-  createDeleteButton: function() {
+  createDeleteButton: function () {
     let deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
     deleteButton.className = 'deleteButton';
     return deleteButton;
   },
 
-  setUpEventListener: function() {
+  setUpEventListener: function () {
     let tasksUl = document.getElementById('tasksUl');
-    tasksUl.addEventListener('click', function(event) {
+    tasksUl.addEventListener('click', function (event) {
       //Targets the element that was clicked on.
       let elementClicked = event.target;
 
