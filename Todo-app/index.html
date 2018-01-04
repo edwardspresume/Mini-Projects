@@ -8,16 +8,88 @@
   <title>Todo List</title>
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js">
   </script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/style.css">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- BOOTSTRAP -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous"> -->
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+
+
+
+
+  <link rel="stylesheet" href="css/materializeS.css">
 </head>
 
 <body>
   <div class="container">
-    <h1 class="text-center mt-5">Todo List</h1>
+    <h1 class="center">Todo List</h1>
 
+    <div class="card hoverable">
+      <div class="card-image">
+        <img src="https://images.unsplash.com/photo-1416339276121-ba1dfa199912?auto=format&fit=crop&w=967&q=80">
+        <a onclick="handler.addTask()" class="btn-floating halfway-fab waves-effect waves-light red">
+          <i class="material-icons">add</i>
+        </a>
+      </div>
+      <div class="card-content">
+        <div class="date-grid">
+          <span id="date"></span>
+          <div class="month-day">
+            <p id="month"></p>
+            <p id="day"></p>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+      <div class="card-content">
+        <ul id='tasksUl'></ul>
+
+        <!-- use a modal to prompt the task input -->
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <!-- ROUGH LAYOUT -->
+  <div>
+    <button onclick="handler.toggleAll()">Toggle all</button>
+  </div>
+
+  <!-- <div>
+    <button onclick="handler.addTask()">Add</button>
+    <input id="AddTaskInput" type="text" name="" value="">
+  </div> -->
+
+  <div>
+    <button onclick="handler.changeTask()">Change Task</button>
+    <input id="changeTaskIndexInput" type="number">
+    <input id="changeTaskInput" type="text">
+  </div>
+
+  <div>
+    <button onclick="handler.toggleCompleted()">Toggle completed</button>
+    <input id="toggleCompletedIndexInput" type="number">
+  </div>
+
+  <ul id='tasksUl'></ul>
+
+
+  <!-- TEST 1 -->
+  <!-- <h1 class="text-center mt-5">Todo List</h1>
     <div class="card mx-auto" style="width: 20rem;">
-      <img class="card-img-top" src="https://images.pexels.com/photos/209663/pexels-photo-209663.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" alt="Card image cap">
+      <img class="card-img-top" src="https://images.pexels.com/photos/209663/pexels-photo-209663.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
+        alt="Card image cap">
       <div class="card-block">
         <div class="date">
           <span id="date"></span>
@@ -36,39 +108,20 @@
         <a href="#" class="card-link">Card link</a>
         <a href="#" class="card-link">Another link</a>
       </div>
-    </div>
-
-
-    <div>
-      <button onclick="handler.toggleAll()">Toggle all</button>
-    </div>
-
-    <div>
-      <button onclick="handler.addTask()">Add</button>
-      <input id="AddTaskInput" type="text" name="" value="">
-    </div>
-
-    <div>
-      <button onclick="handler.changeTask()">Change Task</button>
-      <input id="changeTaskIndexInput" type="number">
-      <input id="changeTaskInput" type="text">
-    </div>
-
-    <div>
-      <button onclick="handler.toggleCompleted()">Toggle completed</button>
-      <input id="toggleCompletedIndexInput" type="number">
-    </div>
-
-    <ul id='tasksUl'></ul>
-
+    </div> -->
 
   </div>
 
 
+  <!-- Compiled and minified JQuery -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js "></script>
 
 
-
-  <script src="main.js"></script>
+  <script src="test.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,11 @@
+.date-grid {
+  font-size: 3em;
+  display: grid;
+  grid-template-columns: 10% 25%;
+  align-items: center;
+  margin-bottom: 10px;
+
+  .month-day {
+    font-size: 0.3em;
+  }
+}
