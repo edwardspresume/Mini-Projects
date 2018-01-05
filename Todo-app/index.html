@@ -8,35 +8,25 @@
   <title>Todo List</title>
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js">
   </script>
-
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- BOOTSTRAP -->
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-    crossorigin="anonymous"> -->
-
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
-
-
-
-
+  <!-- Custom style sheet -->
   <link rel="stylesheet" href="css/materializeS.css">
 </head>
 
 <body>
-  <div class="container">
-    <h1 class="center">Todo List</h1>
 
+  <div class="container">
+
+    <h1 class="center">Todo List</h1>
     <div class="card hoverable">
-      <div class="card-image">
-        <img src="https://images.unsplash.com/photo-1416339276121-ba1dfa199912?auto=format&fit=crop&w=967&q=80">
-        <a onclick="handler.addTask()" class="btn-floating halfway-fab waves-effect waves-light red">
+      <div class="card-content">
+        <a data-target="modal1" class="btn-floating waves-effect waves-light red right modal-trigger" href="#modal1">
           <i class="material-icons">add</i>
         </a>
-      </div>
-      <div class="card-content">
         <div class="date-grid">
           <span id="date"></span>
           <div class="month-day">
@@ -48,13 +38,25 @@
       </div>
       <div class="card-content">
         <ul id='tasksUl'></ul>
+      </div>
 
-        <!-- use a modal to prompt the task input -->
+      <!-- Modal -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Enter a task</h4>
+          <div class="divider"></div>
+          <input id="addTaskInput" type="text" name="" value="">
+        </div>
+        <div class="modal-footer">
+          <button onclick="handler.addTask()" class="modal-action modal-close waves-effect waves-red btn-flat">Submit</button>
+        </div>
       </div>
 
 
     </div>
+
   </div>
+
 
 
 
@@ -62,14 +64,14 @@
 
 
   <!-- ROUGH LAYOUT -->
-  <div>
+  <!-- <div>
     <button onclick="handler.toggleAll()">Toggle all</button>
   </div>
 
-  <!-- <div>
+  <div>
     <button onclick="handler.addTask()">Add</button>
     <input id="AddTaskInput" type="text" name="" value="">
-  </div> -->
+  </div>
 
   <div>
     <button onclick="handler.changeTask()">Change Task</button>
@@ -82,33 +84,7 @@
     <input id="toggleCompletedIndexInput" type="number">
   </div>
 
-  <ul id='tasksUl'></ul>
-
-
-  <!-- TEST 1 -->
-  <!-- <h1 class="text-center mt-5">Todo List</h1>
-    <div class="card mx-auto" style="width: 20rem;">
-      <img class="card-img-top" src="https://images.pexels.com/photos/209663/pexels-photo-209663.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
-        alt="Card image cap">
-      <div class="card-block">
-        <div class="date">
-          <span id="date"></span>
-          <p id="month"></p>
-          <p id="day"></p>
-          <i class="fas fa-plus-circle"></i>
-        </div>
-
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
-      <div class="card-block">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
-      </div>
-    </div> -->
+  <ul id='tasksUl'></ul> -->
 
   </div>
 
@@ -120,6 +96,11 @@
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js "></script>
 
+  <script>
+    $(document).ready(function () {
+      $('.modal').modal();
+    });
+  </script>
 
   <script src="test.js"></script>
 </body>

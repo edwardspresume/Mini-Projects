@@ -89,11 +89,12 @@ let todoList = {
 //Object for our Event handlers
 let handler = {
   addTask: () => {
-    let input = prompt("Enter a task");
-    if (input === "") {
+    let addTaskInput = document.getElementById("addTaskInput");
+    if (addTaskInput.value === "") {
       alert("Please enter a task to continue");
     } else {
-      todoList.addTask(input);
+      todoList.addTask(addTaskInput.value);
+      addTaskInput.value = "";
     }
 
     view.displayTasks();
