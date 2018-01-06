@@ -1,14 +1,29 @@
-.date-grid {
-  font-size: 3em;
-  display: grid;
-  grid-template-columns: 25px 10px;
-  align-items: center;
-  margin-bottom: 5px; }
-  .date-grid .month-day {
-    font-size: 0.3em; }
+.card-background {
+  background-color: #ACF7E2;
+  padding: 20px 10px 10px 10px;
+  /*Card stack */
+  /*Heading title*/
+  /* Displays the date*/ }
+  .card-background .card-stack {
+    box-shadow: 3px 3px 3px 3px white, 3px 3px 3px 3px white, 3px 3px 3px 3px grey, 3px 3px 3px 3px white, 3px 3px 3px 3px white, 3px 3px 3px 3px grey, 3px 3px 3px 3px white, 3px 3px 3px 3px white, 3px 3px 3px 3px grey, 3px 3px 3px 3px white, 3px 3px 3px 3px white, 3px 3px 3px 3px grey, 3px 3px 3px 3px white, 3px 3px 3px 3px white, 3px 3px 3px 3px grey, 3px 3px 3px 3px white, 3px 3px 3px 3px white, 3px 3px 3px 3px grey; }
+  .card-background .heading-title {
+    margin-top: -7px;
+    margin-bottom: 20px;
+    color: #72C0B7;
+    font-weight: 800; }
+  .card-background .date-grid {
+    font-size: 3em;
+    display: grid;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #49a79c;
+    grid-template-columns: 25px 10px; }
+    .card-background .date-grid .month-day {
+      font-size: 0.3em; }
 
 .modal-trigger {
-  margin-top: 10px; }
+  margin-top: 10px;
+  background-color: #ACF7E2; }
 
 .divider {
   margin-left: calc(-10% + (8px/2));

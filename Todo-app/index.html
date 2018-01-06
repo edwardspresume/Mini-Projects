@@ -21,41 +21,44 @@
 
   <div class="container">
 
-    <h1 class="center">Todo List</h1>
+
     <!-- Tasks Card -->
-    <div class="card hoverable">
-      <div class="card-content">
-        <!-- Modal Trigger -->
-        <a class="btn-floating waves-effect waves-light red right modal-trigger" href="#modal1">
-          <i class="material-icons">add</i>
-        </a>
-        <!-- Date -->
-        <div class="date-grid">
-          <span id="date"></span>
-          <div class="month-day">
-            <p id="month"></p>
-            <p id="day"></p>
+    <div class="card hoverable card-background">
+      <h6 class="center heading-title">Todo List</h6>
+      <div class="card hoverable card-stack">
+        <div class="card-content">
+          <!-- Modal Trigger -->
+          <a class="btn-floating waves-effect waves-light  right modal-trigger" href="#modal1">
+            <i class="material-icons">add</i>
+          </a>
+          <!-- Date -->
+          <div class="date-grid">
+            <span id="date"></span>
+            <div class="month-day">
+              <p id="month"></p>
+              <p id="day"></p>
+            </div>
+          </div>
+          <div class="divider"></div>
+        </div>
+        <div class="card-content">
+          <!-- Task List -->
+          <ul id='tasksUl'></ul>
+        </div>
+
+        <!-- Modal -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Enter a task</h4>
+            <div class="divider"></div>
+            <input id="addTaskInput" type="text" name="" value="" autofocus="autofocus">
+          </div>
+          <div class="modal-footer">
+            <button onclick="handler.addTask()" class="modal-action modal-close waves-effect waves-red btn-flat">Submit</button>
           </div>
         </div>
-        <div class="divider"></div>
-      </div>
-      <div class="card-content">
-        <!-- Task List -->
-        <ul id='tasksUl'></ul>
-      </div>
 
-      <!-- Modal -->
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4>Enter a task</h4>
-          <div class="divider"></div>
-          <input id="addTaskInput" type="text" name="" value="" autofocus="autofocus">
-        </div>
-        <div class="modal-footer">
-          <button onclick="handler.addTask()" class="modal-action modal-close waves-effect waves-red btn-flat">Submit</button>
-        </div>
       </div>
-
     </div>
 
   </div>
