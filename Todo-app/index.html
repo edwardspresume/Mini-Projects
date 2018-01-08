@@ -14,14 +14,13 @@
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
   <!-- Custom style sheet -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-
   <div class="container">
-
-
     <!-- Tasks Card -->
     <div class="card hoverable card-background">
       <h6 class="center heading-title">Todo List</h6>
@@ -39,15 +38,18 @@
               <p id="day"></p>
             </div>
           </div>
-
-
-
           <div class="divider"></div>
         </div>
+        <!-- Task List -->
         <div class="card-content">
-          <!-- Task List -->
           <ul id='tasksUl'></ul>
-
+        </div>
+        <!-- Task Counter-->
+        <div class="card-content">
+          <div class="divider"></div>
+          <div class="task-counter">
+            <span id="taskItems"></span>
+          </div>
         </div>
 
         <!-- Modal -->
@@ -98,14 +100,6 @@
     $(document).ready(function () {
       $('.modal').modal();
     });
-
-    $(document).ready(function () {
-      $('input[type=checkbox]').each(function () {
-        if (this.nextSibling.nodeName != 'label') {
-          $(this).after('<label for="' + this.id + '"></label>')
-        }
-      })
-    })
   </script>
 
   <script src="test.js"></script>

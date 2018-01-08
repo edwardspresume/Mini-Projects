@@ -42,16 +42,15 @@ $shadow-color: black;
   /*Task items*/
   #tasksUl {
     margin-top: -25px;
+    margin-bottom: -25px;
     li {
       padding: 10px;
       [type ="checkbox"] {
-        position: unset;
+        position: static;
         opacity: 1;
         pointer-events: fill;
         float: left;
-
         margin-right: 5px;
-
         margin-top: 6px;
       }
       /*Delete Button*/
@@ -66,6 +65,14 @@ $shadow-color: black;
         }
       }
     }
+  }
+  #taskItems {
+    float: left;
+  }
+
+  .task-counter {
+    margin-top: 10px;
+    margin-bottom: 15px;
   }
   /*Card stack */
   .card-stack {
