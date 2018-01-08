@@ -36,6 +36,13 @@
     .card-background #tasksUl li {
       padding: 10px;
       /*Delete Button*/ }
+      .card-background #tasksUl li [type="checkbox"] {
+        position: unset;
+        opacity: 1;
+        pointer-events: fill;
+        float: left;
+        margin-right: 5px;
+        margin-top: 6px; }
       .card-background #tasksUl li .deleteButton {
         border: none;
         float: right;
@@ -46,8 +53,5 @@
           color: #ff1744; }
   .card-background .card-stack {
     box-shadow: 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1), 0 0.5em 0 -0.25em white, 0 0.5em 0.1875em -0.25em rgba(0, 0, 0, 0.1), 0 1em 0 -0.5em white, 0 1em 0.1875em -0.5em rgba(0, 0, 0, 0.1); }
-
-[type="checkbox"] {
-  opacity: 1 !important; }
 
 /*# sourceMappingURL=style.css.map */

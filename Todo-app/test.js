@@ -139,25 +139,35 @@ let view = {
     tasksUl.innerHTML = "";
 
     todoList.tasks.forEach(function(task, index) {
+      let taskLi = document.createElement("li");
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
-      let taskLi = document.createElement("li");
       let taskCompletion = "";
       if (task.completed === true) {
         taskCompletion = `(X) ${task.task}`;
       } else {
-        taskCompletion = `${task.task}`;
+        taskCompletion = task.task;
+        taskCompletion.textDecoration = "underline ";
       }
 
       taskLi.id = index;
-      taskLi.appendChild(checkbox);
       taskLi.textContent = taskCompletion;
-
+      taskLi.appendChild(checkbox);
       taskLi.appendChild(this.createDeleteButton());
       tasksUl.appendChild(taskLi);
     }, this);
   },
-  createCheckBox: function() {},
+
+  // createCheckBox: function() {
+  //   return checkbox;
+  //   todoList.tasks.forEach(function(task) {
+  //     if (checkbox.checked === true) {
+  //       task.task.style.textDecoration = "underline ";
+  //     } else {
+  //       task.task.style.textDecoration = "overline ";
+  //     }
+  //   });
+  // },
 
   createDeleteButton: function() {
     let deleteButton = document.createElement("button");

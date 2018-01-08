@@ -44,6 +44,16 @@ $shadow-color: black;
     margin-top: -25px;
     li {
       padding: 10px;
+      [type ="checkbox"] {
+        position: unset;
+        opacity: 1;
+        pointer-events: fill;
+        float: left;
+
+        margin-right: 5px;
+
+        margin-top: 6px;
+      }
       /*Delete Button*/
       .deleteButton {
         border: none;
@@ -65,8 +75,4 @@ $shadow-color: black;
       0 1em 0 -0.5em rgba($card-color, 10%),
       0 1em 0.1875em -0.5em rgba($shadow-color, 0.1);
   }
-}
-
-[type ="checkbox"] {
-  opacity: 1 !important;
 }
