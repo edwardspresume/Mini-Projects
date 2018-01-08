@@ -1,6 +1,53 @@
-.date {
-  padding: 20px;
-  background: red;
-  color: white; }
+/*Variables */
+/*Todo List */
+.card-background {
+  margin-top: 50px;
+  background-color: #acf7e2;
+  padding: 20px 10px 10px 10px;
+  /*Heading title*/
+  /*Displays the date*/
+  /*Modal trigger*/
+  /*Divider*/
+  /*Task items*/
+  /*Card stack */ }
+  .card-background .heading-title {
+    margin-top: -7px;
+    margin-bottom: 20px;
+    color: #72c0b7;
+    font-weight: 800; }
+  .card-background .date-grid {
+    font-size: 3em;
+    display: grid;
+    align-items: center;
+    margin-top: -20px;
+    margin-bottom: 15px;
+    color: #49a79c;
+    grid-template-columns: 25px 10px; }
+    .card-background .date-grid .month-day {
+      font-size: 0.3em; }
+  .card-background .modal-trigger {
+    margin-top: -5px;
+    background-color: #acf7e2; }
+  .card-background .divider {
+    margin-left: calc(-10% + (8px/2));
+    margin-right: calc(-10% + (8px/2)); }
+  .card-background #tasksUl {
+    margin-top: -25px; }
+    .card-background #tasksUl li {
+      padding: 10px;
+      /*Delete Button*/ }
+      .card-background #tasksUl li .deleteButton {
+        border: none;
+        float: right;
+        font-size: 15px;
+        background-color: transparent; }
+        .card-background #tasksUl li .deleteButton:hover {
+          cursor: pointer;
+          color: #ff1744; }
+  .card-background .card-stack {
+    box-shadow: 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1), 0 0.5em 0 -0.25em white, 0 0.5em 0.1875em -0.25em rgba(0, 0, 0, 0.1), 0 1em 0 -0.5em white, 0 1em 0.1875em -0.5em rgba(0, 0, 0, 0.1); }
+
+[type="checkbox"] {
+  opacity: 1 !important; }
 
 /*# sourceMappingURL=style.css.map */
