@@ -7,7 +7,6 @@
   /*Heading title*/
   /*Displays the date*/
   /*Modal trigger*/
-  /*Divider*/
   /*Task items*/
   /*Card stack */ }
   .card-background .heading-title {
@@ -16,21 +15,19 @@
     color: #72c0b7;
     font-weight: 800; }
   .card-background .date-grid {
-    font-size: 3em;
-    display: grid;
-    align-items: center;
+    font-size: 2.7em;
     margin-top: -20px;
     margin-bottom: 15px;
-    color: #49a79c;
-    grid-template-columns: 25px 10px; }
+    color: #49a79c; }
+    .card-background .date-grid #date {
+      display: inline-block; }
     .card-background .date-grid .month-day {
-      font-size: 0.3em; }
+      margin-left: -5px;
+      font-size: 0.3em;
+      display: inline-block; }
   .card-background .modal-trigger {
-    margin-top: -5px;
+    margin-top: -15px;
     background-color: #acf7e2; }
-  .card-background .divider {
-    margin-left: calc(-10% + (8px/2));
-    margin-right: calc(-10% + (8px/2)); }
   .card-background #tasksUl {
     margin-top: -25px;
     margin-bottom: -25px; }
@@ -55,8 +52,10 @@
   .card-background #taskItems {
     float: left; }
   .card-background .task-counter {
+    font-size: 0.8em;
+    color: grey;
     margin-top: 10px;
-    margin-bottom: 15px; }
+    margin-bottom: 13px; }
   .card-background .card-stack {
     box-shadow: 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1), 0 0.5em 0 -0.25em white, 0 0.5em 0.1875em -0.25em rgba(0, 0, 0, 0.1), 0 1em 0 -0.5em white, 0 1em 0.1875em -0.5em rgba(0, 0, 0, 0.1); }
 

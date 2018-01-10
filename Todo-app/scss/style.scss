@@ -18,27 +18,25 @@ $shadow-color: black;
   }
   /*Displays the date*/
   .date-grid {
-    font-size: 3em;
-    display: grid;
-    align-items: center;
+    font-size: 2.7em;
     margin-top: -20px;
     margin-bottom: 15px;
     color: rgb(73, 167, 156);
-    grid-template-columns: 25px 10px;
+    #date {
+      display: inline-block;
+    }
     .month-day {
+      margin-left: -5px;
       font-size: 0.3em;
+      display: inline-block;
     }
   }
   /*Modal trigger*/
   .modal-trigger {
-    margin-top: -5px;
+    margin-top: -15px;
     background-color: #acf7e2;
   }
-  /*Divider*/
-  .divider {
-    margin-left: calc(-10% + (8px/2));
-    margin-right: calc(-10% + (8px/2));
-  }
+
   /*Task items*/
   #tasksUl {
     margin-top: -25px;
@@ -71,8 +69,10 @@ $shadow-color: black;
   }
 
   .task-counter {
+    font-size: 0.8em;
+    color: grey;
     margin-top: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 13px;
   }
   /*Card stack */
   .card-stack {

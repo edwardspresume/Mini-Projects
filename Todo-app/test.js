@@ -19,7 +19,7 @@ let currentDate = {
     "December"
   ],
 
-  displayDate: function () {
+  displayDate: function() {
     document.getElementById("date").innerHTML = this.todaysDate.getDate();
     document.getElementById("day").innerHTML = this.daysPlaceholder[
       this.todaysDate.getDay()
@@ -38,7 +38,7 @@ let todoList = {
   tasks: [],
 
   //Add a new task to the list
-  addTask: function (task) {
+  addTask: function(task) {
     this.tasks.push({
       task: task,
       completed: false
@@ -46,23 +46,23 @@ let todoList = {
   },
 
   //Change an existing task in our list
-  changeTask: function (index, task) {
+  changeTask: function(index, task) {
     this.tasks[index].task = task;
   },
 
   //Delete a task from our list
-  deleteTask: function (index) {
+  deleteTask: function(index) {
     this.tasks.splice(index, 1);
   },
 
   //Toggles between whether our not a task is completed
-  toggleCompleted: function (index) {
+  toggleCompleted: function(index) {
     let task = this.tasks[index];
     task.completed = !task.completed;
   },
 
   //Toggles all of our tasks
-  toggleAll: function () {
+  toggleAll: function() {
     let totalTaks = this.tasks.length;
     let completedTasks = 0;
 
@@ -134,18 +134,18 @@ let handler = {
 
 //Displays the tasks in our list
 let view = {
-  displayTasks: function () {
+  displayTasks: function() {
     let tasksUl = document.getElementById("tasksUl");
     tasksUl.innerHTML = "";
 
-    todoList.tasks.forEach(function (task, index) {
+    todoList.tasks.forEach(function(task, index) {
       let taskLi = document.createElement("li");
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
       taskLi.textContent = task.task;
       taskLi.appendChild(checkbox);
 
-      checkbox.onclick = function () {
+      checkbox.onclick = function() {
         if (this.checked) {
           task.completed = true;
           taskLi.style.textDecoration = "line-through";
@@ -159,20 +159,20 @@ let view = {
       taskLi.appendChild(this.createDeleteButton());
       tasksUl.appendChild(taskLi);
       let taskItems = document.getElementById("taskItems");
-      taskItems.innerHTML = `${(index += 1)} Items left`;
+      taskItems.innerHTML = `${(index += 1)} Task left`;
     }, this);
   },
 
-  createDeleteButton: function () {
+  createDeleteButton: function() {
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "X";
     deleteButton.className = "deleteButton";
     return deleteButton;
   },
 
-  setUpEventListener: function () {
+  setUpEventListener: function() {
     let tasksUl = document.getElementById("tasksUl");
-    tasksUl.addEventListener("click", function (event) {
+    tasksUl.addEventListener("click", function(event) {
       //Targets the element that was clicked on.
       let elementClicked = event.target;
 
