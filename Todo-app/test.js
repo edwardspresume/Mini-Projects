@@ -161,6 +161,16 @@ let view = {
       let taskItems = document.getElementById("taskItems");
       taskItems.innerHTML = `${(index += 1)} Task left`;
     }, this);
+
+    $(document).ready(function() {
+      $("input[type=checkbox]").each(function() {
+        if (this.nextSibling.nodeName != "label") {
+          $(this).after(
+            '<label for="' + this.id + '" class="checkbox"></label>'
+          );
+        }
+      });
+    });
   },
 
   createDeleteButton: function() {

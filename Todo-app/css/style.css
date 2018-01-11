@@ -1,6 +1,7 @@
 /*Variables */
 /*Todo List */
 .card-background {
+  min-width: 100%;
   margin-top: 50px;
   background-color: #acf7e2;
   padding: 20px 10px 10px 10px;
@@ -35,12 +36,14 @@
       padding: 10px;
       /*Delete Button*/ }
       .card-background #tasksUl li [type="checkbox"] {
-        position: static;
-        opacity: 1;
+        position: fixed;
         pointer-events: fill;
-        float: left;
-        margin-right: 5px;
-        margin-top: 6px; }
+        margin-left: -82px;
+        z-index: 1;
+        width: 25px;
+        height: 25px; }
+      .card-background #tasksUl li .checkbox {
+        float: left; }
       .card-background #tasksUl li .deleteButton {
         border: none;
         float: right;
