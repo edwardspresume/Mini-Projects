@@ -1,9 +1,22 @@
-/*Variables */
+/* ==========================================================================
+                                 Variables
+   ========================================================================== */
 
 $card-color: white;
 $shadow-color: black;
 
-/*Todo List */
+/* ==========================================================================
+                                 General
+   ========================================================================== */
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+
+/* ==========================================================================
+                                 Todo List 
+   ========================================================================== */
 
 .card-background {
   min-width: 100%;
@@ -37,14 +50,13 @@ $shadow-color: black;
     margin-top: -15px;
     background-color: #acf7e2;
   }
-
   /*Task items*/
   #tasksUl {
     margin-top: -25px;
     margin-bottom: -25px;
     li {
       padding: 10px;
-      [type ="checkbox"] {
+      [type="checkbox"] {
         position: fixed;
         pointer-events: fill;
         margin-left: -82px;
@@ -52,7 +64,6 @@ $shadow-color: black;
         width: 25px;
         height: 25px;
       }
-
       .checkbox {
         float: left;
       }
@@ -72,7 +83,6 @@ $shadow-color: black;
   #taskItems {
     float: left;
   }
-
   .task-counter {
     font-size: 0.8em;
     color: grey;
@@ -81,10 +91,6 @@ $shadow-color: black;
   }
   /*Card stack */
   .card-stack {
-    box-shadow: 0 0.0625em 0.1875em 0 rgba($shadow-color, 0.1),
-      0 0.5em 0 -0.25em rgba($card-color, 5%),
-      0 0.5em 0.1875em -0.25em rgba($shadow-color, 0.1),
-      0 1em 0 -0.5em rgba($card-color, 10%),
-      0 1em 0.1875em -0.5em rgba($shadow-color, 0.1);
+    box-shadow: 0 0.0625em 0.1875em 0 rgba($shadow-color, 0.1), 0 0.5em 0 -0.25em rgba($card-color, 5%), 0 0.5em 0.1875em -0.25em rgba($shadow-color, 0.1), 0 1em 0 -0.5em rgba($card-color, 10%), 0 1em 0.1875em -0.5em rgba($shadow-color, 0.1);
   }
 }
