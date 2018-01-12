@@ -52,6 +52,8 @@ body {
         z-index: 1;
         width: 25px;
         height: 25px; }
+        .card-background #tasksUl li [type="checkbox"]:hover {
+          cursor: pointer; }
       .card-background #tasksUl li .checkbox {
         float: left; }
       .card-background #tasksUl li .deleteButton {

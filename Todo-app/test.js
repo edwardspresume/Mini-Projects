@@ -162,14 +162,11 @@ let view = {
       taskItems.innerHTML = `${(index += 1)} Task left`;
     }, this);
 
-    $(document).ready(function() {
-      $("input[type=checkbox]").each(function() {
-        if (this.nextSibling.nodeName != "label") {
-          $(this).after(
-            '<label for="' + this.id + '" class="checkbox"></label>'
-          );
-        }
-      });
+    //Creates a materialize label for each checkbox
+    $("input[type=checkbox]").each(function() {
+      if (this.nextSibling.nodeName != "label") {
+        $(this).after('<label for="' + this.id + '" class="checkbox"></label>');
+      }
     });
   },
 
@@ -195,3 +192,6 @@ let view = {
 };
 
 view.setUpEventListener();
+
+//TaskItems still display 1 when everything has been deleted
+//Task input does not auto fix on the input
