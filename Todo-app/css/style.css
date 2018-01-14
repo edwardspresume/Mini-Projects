@@ -11,8 +11,7 @@ body {
                                  Todo List 
    ========================================================================== */
 .card-background {
-  min-width: 100%;
-  margin-top: 50px;
+  margin: 50px auto;
   background-color: #acf7e2;
   padding: 20px 10px 10px 10px;
   /*Heading title*/
@@ -73,5 +72,15 @@ body {
     margin-bottom: 13px; }
   .card-background .card-stack {
     box-shadow: 0 0.0625em 0.1875em 0 rgba(0, 0, 0, 0.1), 0 0.5em 0 -0.25em white, 0 0.5em 0.1875em -0.25em rgba(0, 0, 0, 0.1), 0 1em 0 -0.5em white, 0 1em 0.1875em -0.5em rgba(0, 0, 0, 0.1); }
+
+/* ==========================================================================
+                                 Media Query
+   ========================================================================== */
+@media (min-width: 700px) {
+  .card-background {
+    width: 40%; }
+
+  #modal1 {
+    width: 30%; } }
 
 /*# sourceMappingURL=style.css.map */

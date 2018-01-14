@@ -89,12 +89,12 @@ let todoList = {
 //Object for our Event handlers
 let handler = {
   addTask: () => {
-    let addTaskInput = document.getElementById("addTaskInput");
-    if (addTaskInput.value === "") {
+    let AddTaskInput = document.getElementById("AddTaskInput");
+    if (AddTaskInput.value === "") {
       alert("Please enter a task to continue");
     } else {
-      todoList.addTask(addTaskInput.value);
-      addTaskInput.value = "";
+      todoList.addTask(AddTaskInput.value);
+      AddTaskInput.value = "";
     }
 
     view.displayTasks();
@@ -140,39 +140,23 @@ let view = {
 
     todoList.tasks.forEach(function(task, index) {
       let taskLi = document.createElement("li");
-      let checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      taskLi.textContent = task.task;
-      taskLi.appendChild(checkbox);
-
-      checkbox.onclick = function() {
-        if (this.checked) {
-          task.completed = true;
-          taskLi.style.textDecoration = "line-through";
-        } else {
-          task.completed = false;
-          taskLi.style.textDecoration = "none";
-        }
-      };
+      let taskCompletion = "";
+      if (task.completed === true) {
+        taskCompletion = `(X) ${task.task}`;
+      } else {
+        taskCompletion = `( ) ${task.task}`;
+      }
 
       taskLi.id = index;
+      taskLi.textContent = taskCompletion;
       taskLi.appendChild(this.createDeleteButton());
       tasksUl.appendChild(taskLi);
-      let taskItems = document.getElementById("taskItems");
-      taskItems.innerHTML = `${(index += 1)} Task left`;
     }, this);
-
-    //Creates a materialize label for each checkbox
-    $("input[type=checkbox]").each(function() {
-      if (this.nextSibling.nodeName != "label") {
-        $(this).after('<label for="' + this.id + '" class="checkbox"></label>');
-      }
-    });
   },
 
   createDeleteButton: function() {
     let deleteButton = document.createElement("button");
-    deleteButton.textContent = "X";
+    deleteButton.textContent = "Delete";
     deleteButton.className = "deleteButton";
     return deleteButton;
   },
@@ -192,6 +176,3 @@ let view = {
 };
 
 view.setUpEventListener();
-
-//TaskItems still display 1 when everything has been deleted
-//Task input does not auto fix on the input
