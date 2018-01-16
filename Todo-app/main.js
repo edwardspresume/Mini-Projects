@@ -19,7 +19,7 @@ let currentDate = {
     "December"
   ],
 
-  displayDate: function () {
+  displayDate: function() {
     document.getElementById("date").innerHTML = this.todaysDate.getDate();
     document.getElementById("day").innerHTML = this.daysPlaceholder[
       this.todaysDate.getDay()
@@ -38,7 +38,7 @@ let todoList = {
   tasks: [],
 
   //Add a new task to the list
-  addTask: function (task) {
+  addTask: function(task) {
     this.tasks.push({
       task: task,
       completed: false
@@ -46,10 +46,9 @@ let todoList = {
   },
 
   //Delete a task from our list
-  deleteTask: function (index) {
+  deleteTask: function(index) {
     this.tasks.splice(index, 1);
-  },
-
+  }
 };
 
 //Object for our Event handlers
@@ -59,7 +58,7 @@ let handler = {
     if (addTaskInput.value === "") {
       alert("Please enter a task to continue");
     } else {
-      addTaskInput
+      addTaskInput;
       todoList.addTask(addTaskInput.value);
       addTaskInput.value = "";
     }
@@ -70,36 +69,34 @@ let handler = {
   deleteTask: index => {
     todoList.deleteTask(index);
     view.displayTasks();
-  },
-
+  }
 };
 
 //Displays the tasks to the DOM
 let view = {
-  displayTasks: function () {
+  displayTasks: function() {
     let tasksUl = document.getElementById("tasksUl");
     tasksUl.innerHTML = "";
 
-    todoList.tasks.forEach(function (task, index) {
+    todoList.tasks.forEach(function(task, index) {
       let taskLi = document.createElement("li");
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
-      taskLi.textContent = task.task;
-      taskLi.appendChild(checkbox);
 
       //If check box is clicked modify taskLi text style
-      checkbox.onclick = function () {
+      checkbox.onclick = function() {
         if (this.checked) {
           task.completed = true;
-          taskLi.style.color = "#848484"
+          taskLi.style.color = "#848484";
           taskLi.style.textDecoration = "line-through";
         } else {
           task.completed = false;
-          taskLi.style.color = "#000"
+          taskLi.style.color = "#000";
           taskLi.style.textDecoration = "none";
         }
       };
-
+      taskLi.textContent = task.task;
+      taskLi.appendChild(checkbox);
       taskLi.id = index;
       taskLi.appendChild(this.createDeleteButton());
       tasksUl.appendChild(taskLi);
@@ -108,7 +105,7 @@ let view = {
     }, this);
 
     //Creates a materialize label for each checkbox
-    $("input[type=checkbox]").each(function () {
+    $("input[type=checkbox]").each(function() {
       if (this.nextSibling.nodeName != "label") {
         $(this).after('<label for="' + this.id + '" class="checkbox"></label>');
       }
@@ -116,16 +113,16 @@ let view = {
   },
 
   //Creates a delete button to be added with each task
-  createDeleteButton: function () {
+  createDeleteButton: function() {
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "X";
     deleteButton.className = "deleteButton";
     return deleteButton;
   },
 
-  setUpEventListener: function () {
+  setUpEventListener: function() {
     let tasksUl = document.getElementById("tasksUl");
-    tasksUl.addEventListener("click", function (event) {
+    tasksUl.addEventListener("click", function(event) {
       //Targets the element that was clicked on.
       let elementClicked = event.target;
 
