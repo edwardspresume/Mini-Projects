@@ -46,7 +46,6 @@ body {
       /*Delete Button*/ }
       .card-background #tasksUl li [type="checkbox"] {
         position: fixed;
-        opacity: 1;
         pointer-events: fill;
         margin-left: -82px;
         z-index: 100;

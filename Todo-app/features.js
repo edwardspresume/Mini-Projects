@@ -138,6 +138,7 @@ let view = {
     let tasksUl = document.getElementById("tasksUl");
     tasksUl.innerHTML = "";
 
+    //Loops through our tasks[] and stores them witin an Li(taskLi)
     todoList.tasks.forEach(function(task, index) {
       let taskLi = document.createElement("li");
       let taskCompletion = "";
@@ -154,6 +155,7 @@ let view = {
     }, this);
   },
 
+  //Creates a delete button to be added with each task
   createDeleteButton: function() {
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "Delete";

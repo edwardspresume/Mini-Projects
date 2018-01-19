@@ -1,5 +1,5 @@
 //Time
-let currentDate = {
+const currentDate = {
   todaysDate: new Date(),
 
   daysPlaceholder: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
@@ -19,7 +19,8 @@ let currentDate = {
     "December"
   ],
 
-  displayDate: function() {
+  //Logs the data placeholders into their respected id's
+  displayDate: function () {
     document.getElementById("date").innerHTML = this.todaysDate.getDate();
     document.getElementById("day").innerHTML = this.daysPlaceholder[
       this.todaysDate.getDay()
@@ -33,12 +34,12 @@ let currentDate = {
 currentDate.displayDate();
 
 //Object of how todoList
-let todoList = {
+const todoList = {
   //Our list of tasks
   tasks: [],
 
   //Add a new task to the list
-  addTask: function(task) {
+  addTask: function (task) {
     this.tasks.push({
       task: task,
       completed: false
@@ -46,7 +47,7 @@ let todoList = {
   },
 
   //Delete a task from our list
-  deleteTask: function(index) {
+  deleteTask: function (index) {
     this.tasks.splice(index, 1);
   }
 };
@@ -72,19 +73,20 @@ let handler = {
   }
 };
 
-//Displays the tasks to the DOM
+//Displays the tasks to the DOM in a list format
 let view = {
-  displayTasks: function() {
+  displayTasks: function () {
     let tasksUl = document.getElementById("tasksUl");
     tasksUl.innerHTML = "";
 
-    todoList.tasks.forEach(function(task, index) {
+    //Loops through our tasks[] and stores them witin an Li(taskLi)
+    todoList.tasks.forEach(function (task, index) {
       let taskLi = document.createElement("li");
       let checkbox = document.createElement("input");
       checkbox.type = "checkbox";
 
       //If check box is clicked modify taskLi text style
-      checkbox.onclick = function() {
+      checkbox.onclick = function () {
         if (this.checked) {
           task.completed = true;
           taskLi.style.color = "#848484";
@@ -95,6 +97,7 @@ let view = {
           taskLi.style.textDecoration = "none";
         }
       };
+      //Embeds these components with the taskLi
       taskLi.textContent = task.task;
       taskLi.appendChild(checkbox);
       taskLi.id = index;
@@ -105,7 +108,7 @@ let view = {
     }, this);
 
     //Creates a materialize label for each checkbox
-    $("input[type=checkbox]").each(function() {
+    $("input[type=checkbox]").each(function () {
       if (this.nextSibling.nodeName != "label") {
         $(this).after('<label for="' + this.id + '" class="checkbox"></label>');
       }
@@ -113,16 +116,16 @@ let view = {
   },
 
   //Creates a delete button to be added with each task
-  createDeleteButton: function() {
+  createDeleteButton: function () {
     let deleteButton = document.createElement("button");
     deleteButton.textContent = "X";
     deleteButton.className = "deleteButton";
     return deleteButton;
   },
 
-  setUpEventListener: function() {
+  setUpEventListener: function () {
     let tasksUl = document.getElementById("tasksUl");
-    tasksUl.addEventListener("click", function(event) {
+    tasksUl.addEventListener("click", function (event) {
       //Targets the element that was clicked on.
       let elementClicked = event.target;
 
