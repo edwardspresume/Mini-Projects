@@ -1,5 +1,5 @@
 //Time
-let currentDate = {
+const currentDate = {
   todaysDate: new Date(),
 
   daysPlaceholder: ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"],
@@ -19,12 +19,13 @@ let currentDate = {
     "December"
   ],
 
+  //Logs the data placeholders into their respected id's
   displayDate: function() {
-    document.getElementById("date").innerHTML = this.todaysDate.getDate();
-    document.getElementById("day").innerHTML = this.daysPlaceholder[
+    document.getElementById("date").textContent = this.todaysDate.getDate();
+    document.getElementById("day").textContent = this.daysPlaceholder[
       this.todaysDate.getDay()
     ];
-    document.getElementById("month").innerHTML = this.monthsPlaceholder[
+    document.getElementById("month").textContent = this.monthsPlaceholder[
       this.todaysDate.getMonth()
     ];
   }
@@ -33,7 +34,7 @@ let currentDate = {
 currentDate.displayDate();
 
 //Object of how todoList
-let todoList = {
+const todoList = {
   //Our list of tasks
   tasks: [],
 
@@ -57,13 +58,13 @@ let todoList = {
 
   //Toggles between whether our not a task is completed
   toggleCompleted: function(index) {
-    let task = this.tasks[index];
+    const task = this.tasks[index];
     task.completed = !task.completed;
   },
 
   //Toggles all of our tasks
   toggleAll: function() {
-    let totalTaks = this.tasks.length;
+    const totalTaks = this.tasks.length;
     let completedTasks = 0;
 
     //Get number of completed tasks.
@@ -87,22 +88,24 @@ let todoList = {
 };
 
 //Object for our Event handlers
-let handler = {
+const handler = {
   addTask: () => {
-    let AddTaskInput = document.getElementById("AddTaskInput");
-    if (AddTaskInput.value === "") {
+    const addTaskInput = document.getElementById("addTaskInput");
+    if (addTaskInput.value === "") {
       alert("Please enter a task to continue");
     } else {
-      todoList.addTask(AddTaskInput.value);
-      AddTaskInput.value = "";
+      todoList.addTask(addTaskInput.value);
+      addTaskInput.value = "";
     }
 
     view.displayTasks();
   },
 
   changeTask: () => {
-    let changeTaskIndexInput = document.getElementById("changeTaskIndexInput");
-    let changeTaskInput = document.getElementById("changeTaskInput");
+    const changeTaskIndexInput = document.getElementById(
+      "changeTaskIndexInput"
+    );
+    const changeTaskInput = document.getElementById("changeTaskInput");
     todoList.changeTask(
       changeTaskIndexInput.valueAsNumber,
       changeTaskInput.value

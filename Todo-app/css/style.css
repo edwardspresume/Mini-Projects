@@ -47,7 +47,7 @@ body {
       .card-background #tasksUl li [type="checkbox"] {
         position: fixed;
         pointer-events: fill;
-        margin-left: -82px;
+        margin-left: -40px;
         z-index: 100;
         width: 25px;
         height: 25px; }
