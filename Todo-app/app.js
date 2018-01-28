@@ -58,6 +58,7 @@ const handler = {
     const addTaskInput = document.getElementById("addTaskInput");
     if (addTaskInput.value === "") {
       alert("Please enter a task to continue");
+      return;
     } else {
       todoList.addTask(addTaskInput.value);
       addTaskInput.value = "";
@@ -96,9 +97,7 @@ const view = {
           taskLi.style.textDecoration = "none";
         }
       };
-      //Embeds these components with the taskLi
-      // taskLi.textContent = task.task;
-
+      //Embeds these components within the taskLi
       taskLi.appendChild(checkbox);
       taskText = document.createTextNode(task.task);
       taskLi.appendChild(taskText);
@@ -125,8 +124,25 @@ const view = {
     return deleteButton;
   },
 
+  filterTasks: function() {
+    const filter = document.querySelector("#filter");
+
+    filter.addEventListener("keyup", function(e) {
+      const text = e.target.value.toLowerCase();
+
+      tasksUl.childNodes.forEach(function(task) {
+        const item = task.textContent;
+        if (item.toLowerCase().indexOf(text) != -1) {
+          task.style.display = "block";
+        } else {
+          task.style.display = "none";
+        }
+      });
+    });
+  },
+
   setUpEventListener: function() {
-    let tasksUl = document.getElementById("tasksUl");
+    const tasksUl = document.getElementById("tasksUl");
     tasksUl.addEventListener("click", function(event) {
       //Targets the element that was clicked on.
       let elementClicked = event.target;
@@ -138,5 +154,7 @@ const view = {
     });
   }
 };
+
+view.filterTasks();
 
 view.setUpEventListener();

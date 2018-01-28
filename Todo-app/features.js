@@ -136,7 +136,7 @@ const handler = {
 };
 
 //Displays the tasks in our list
-let view = {
+const view = {
   displayTasks: function() {
     let tasksUl = document.getElementById("tasksUl");
     tasksUl.innerHTML = "";
