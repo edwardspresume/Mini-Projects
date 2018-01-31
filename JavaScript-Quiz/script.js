@@ -1,18 +1,22 @@
-//Quiz questions and answers
+/* ==========================================================================
+                                 Quiz data
+   ========================================================================== */
+
 let quizQA = [
-  [
-    "How many days are in the week?", 7
-  ],
-  [
-    "What day is my birthday", 25
-  ],
-  [
-    "How many hours in a day", 24
-  ]
+  ["How many days are in the week?", 7],
+  ["What day is my birthday", 25],
+  ["How many hours in a day", 24]
 ];
 
-//Print the quiz result
+/* ==========================================================================
+                                 Documents our content to the screen
+   ========================================================================== */
+
 let print = msg => document.write(msg);
+
+/* ==========================================================================
+                                 Process user input then render result
+   ========================================================================== */
 
 let quizGenerator = () => {
   //Keep track of how many questions are answered correctly
