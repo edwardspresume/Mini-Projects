@@ -2,23 +2,23 @@
                                  Quiz data
    ========================================================================== */
 
-let quizQA = [
+const quiz = [
   ["How many days are in the week?", 7],
   ["What day is my birthday", 25],
   ["How many hours in a day", 24]
 ];
 
 /* ==========================================================================
-                                 Documents our content to the screen
+                          Prints our content to the screen
    ========================================================================== */
 
-let print = msg => document.write(msg);
+const print = msg => document.write(msg);
 
 /* ==========================================================================
-                                 Process user input then render result
+                      Processes user input then render result
    ========================================================================== */
 
-let quizGenerator = () => {
+const quizGenerator = () => {
   //Keep track of how many questions are answered correctly
   let score = 0;
 
@@ -26,15 +26,15 @@ let quizGenerator = () => {
   let correctQuestions = `<h3> You got these questions correct: </h3> <ol>`;
   let incorrectQuestions = `<h3> You got these questions wrong: </h3> <ol>`;
 
-  //Sort the questions in list format
-  let questionResults = () => `<li> ${quizQA[i][0]} </li>`;
-
   //Loop through the quiz
-  for (var i = 0; i < quizQA.length; i++) {
+  for (var i = 0; i < quiz.length; i++) {
     //Prompt questions
-    let question = parseInt(prompt(quizQA[i][0]));
+    const question = parseInt(prompt(quiz[i][0]));
 
-    if (question === quizQA[i][1]) {
+    //Sort the questions in list format
+    const questionResults = () => `<li> ${quiz[i][0]} </li>`;
+
+    if (question === quiz[i][1]) {
       score++;
       correctQuestions += questionResults();
     } else {
