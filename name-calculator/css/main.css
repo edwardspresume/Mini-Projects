@@ -1,0 +1,90 @@
+@import 'reset.css';
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100vh;
+}
+
+body {
+    display: grid;
+    place-content: center;
+    background: url(https://source.unsplash.com/nCrrvuoyftA) no-repeat center center/cover;
+}
+
+.container {
+    padding: 20px;
+    border: 8px double;
+    background-color: #fff;
+}
+
+h1,
+#calculate {
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.label-error {
+    margin-bottom: 5px;
+}
+
+label {
+    font-weight: bold;
+}
+
+.error {
+    color: red;
+    font-size: .8em;
+    visibility: hidden;
+}
+
+#nameInput {
+    border: 0;
+    outline: 0;
+    height: 25px;
+    width: 100%;
+    border-radius: 5px;
+    padding-left: 10px;
+    margin-bottom: 20px;
+    background-color: burlywood;
+}
+
+.cost {
+    display: flex;
+    justify-content: space-between;
+}
+
+.displayCost {
+    height: 35px;
+    width: 35px;
+    align-self: flex-end;
+    color: orange;
+    text-align: center;
+    line-height: 35px;
+    border-radius: 5px;
+    visibility: hidden;
+    background-color: #000;
+}
+
+#calculate {
+    border: 0;
+    outline: 0;
+    color: orange;
+    border-radius: 10px;
+    background-color: #000;
+}
+
+#calculate:hover {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .8)
+}
