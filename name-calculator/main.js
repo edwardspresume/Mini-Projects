@@ -20,3 +20,9 @@ calculate.addEventListener('click', function () {
         displayCost.style.visibility = 'hidden';
     }
 })
+
+clear.addEventListener('click', function () {
+    nameInput.value = '';
+    error.style.visibility = 'hidden';
+    displayCost.style.visibility = 'hidden';
+})
