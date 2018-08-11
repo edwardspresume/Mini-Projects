@@ -65,12 +65,8 @@ label {
 }
 
 .displayCost {
-    height: 35px;
-    width: 35px;
-    align-self: flex-end;
+    padding: 10px;
     color: orange;
-    text-align: center;
-    line-height: 35px;
     border-radius: 5px;
     visibility: hidden;
     background-color: #000;
